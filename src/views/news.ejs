@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-link"><a href="/">Welcome To Tech Blog</a></div>
+        <div class="header-search">
+            <form action="/" method="POST">
+                <input type="text" name="search" placeholder="Search text here">
+                <input type="submit" value=Search>
+            </form>
+        </div>
+    </header>
+    <section>
+        <div class="news-wrapper">
+            <div class="news-content">
+            <% articles.forEach(function(article, index) { %>
+                <a href="/article/<%- article.id %>" class="news-link">
+                    <img src="<%- article.thumbnail_url %>" alt="My image">
+                    <h2><%- article.title.rendered %></h2>
+                    <p><%- article.excerpt.rendered %></p> 
+                </a>
+            <% }) %>
+            </div>       
+        </div>
+
+    </section>
+    
+</body>
+</html>
